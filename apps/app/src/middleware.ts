@@ -1,5 +1,9 @@
-import { type NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import { routing } from "./i18n/routing";
+
+const intlMiddleware = createMiddleware(routing);
 
 const protectedRoutes = [
   "/dashboard",
@@ -18,10 +22,20 @@ const publicRoutes = [
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Handle i18n redirect first
+  const i18nResponse = intlMiddleware(request);
+  if (i18nResponse) {
+    return i18nResponse;
+  }
+
+  const pathWithoutLocale = pathname.replace(/^\/(en|ru)(\/|$)/, "/");
+
   const isProtected = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
+    pathname.startsWith(route) || pathWithoutLocale.startsWith(route)
   );
-  const isPublic = publicRoutes.some((route) => pathname.startsWith(route));
+  const isPublic = publicRoutes.some((route) =>
+    pathname.startsWith(route) || pathWithoutLocale.startsWith(route)
+  );
 
   // Skip middleware for static files, API routes, and client portal
   if (
@@ -42,13 +56,15 @@ export async function middleware(request: NextRequest) {
         getAll() {
           return request.cookies.getAll();
         },
-        setAll(cookiesToSet: { name: string; value: string; options?: Record<string, unknown> }[]) {
+        setAll(
+          cookiesToSet: { name: string; value: string; options?: Record<string, unknown> }[]
+        ) {
           cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value)
           );
           supabaseResponse = NextResponse.next({ request });
           cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options ? { ...options } as Partial<{ path: string; maxAge: number; domain: string; secure: boolean; sameSite: "lax" | "strict" | "none" }> : undefined)
+            supabaseResponse.cookies.set(name, value, options as Record<string, unknown>)
           );
         },
       },

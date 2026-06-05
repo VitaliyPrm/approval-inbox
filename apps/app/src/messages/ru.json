@@ -1,0 +1,91 @@
+{
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "create": "Создать",
+    "edit": "Редактировать",
+    "view": "Просмотр",
+    "close": "Закрыть",
+    "search": "Поиск",
+    "noResults": "Ничего не найдено",
+    "back": "Назад",
+    "or": "Или"
+  },
+  "auth": {
+    "signIn": "Войти",
+    "signOut": "Выйти",
+    "signUp": "Создать аккаунт",
+    "welcomeBack": "С возвращением в Approval Inbox",
+    "startCentralizing": "Начните централизовать утверждения клиентов",
+    "email": "Эл. почта",
+    "password": "Пароль",
+    "sendMagicLink": "Отправить magic-link",
+    "checkEmail": "Проверьте почту",
+    "magicLinkSent": "Мы отправили magic-link на <strong>{email}</strong>. Нажмите на него, чтобы войти.",
+    "alreadyAccount": "Уже есть аккаунт?",
+    "noAccount": "Нет аккаунта?",
+    "signInLink": "Войти",
+    "signUpLink": "Создать аккаунт",
+    "errors": {
+      "invalidCredentials": "Неверный email или пароль",
+      "authFailed": "Ошибка аутентификации. Попробуйте снова."
+    }
+  },
+  "dashboard": {
+    "title": "Панель",
+    "welcomeBack": "С возвращением, {email}",
+    "newProject": "Новый проект",
+    "projects": "Проекты",
+    "noProjects": "Пока нет проектов",
+    "noProjectsDesc": "Создайте первый проект, чтобы начать.",
+    "createProject": "Создать проект"
+  },
+  "projects": {
+    "title": "Проекты",
+    "newProject": "Новый проект",
+    "projectName": "Название проекта",
+    "description": "Описание (необязательно)",
+    "creating": "Создание...",
+    "createProject": "Создать проект",
+    "uploadFiles": "Загрузить файлы",
+    "files": "Файлы",
+    "noFiles": "Файлы ещё не загружены",
+    "clickToUpload": "Нажмите для загрузки",
+    "orDragDrop": "или перетащите",
+    "supportedFormats": "Изображения, PDF, видео, аудио и другое",
+    "uploading": "Загрузка файлов..."
+  },
+  "comments": {
+    "title": "Комментарии",
+    "addComment": "Добавить комментарий...",
+    "send": "Отправить",
+    "noComments": "Комментариев пока нет",
+    "pinned": "прикреплён"
+  },
+  "approvals": {
+    "approve": "Утвердить",
+    "reject": "Отклонить",
+    "changes": "Правки",
+    "saving": "Сохранение...",
+    "status": "Статус"
+  },
+  "activity": {
+    "title": "Активность",
+    "noActivity": "Активности пока нет"
+  },
+  "notifications": {
+    "title": "Уведомления",
+    "unread": "{count} непрочитанное",
+    "unreadPlural": "{count} непрочитанных",
+    "markAllRead": "Отметить всё прочитанным",
+    "noNotifications": "Уведомлений пока нет"
+  },
+  "language": {
+    "switchTo": "Сменить язык",
+    "en": "English",
+    "ru": "Русский"
+  }
+}

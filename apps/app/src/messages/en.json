@@ -1,0 +1,91 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "create": "Create",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "search": "Search",
+    "noResults": "No results found",
+    "back": "Back",
+    "or": "Or"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signUp": "Create account",
+    "welcomeBack": "Welcome back to Approval Inbox",
+    "startCentralizing": "Start centralizing your client approvals",
+    "email": "Email",
+    "password": "Password",
+    "sendMagicLink": "Send magic link",
+    "checkEmail": "Check your email",
+    "magicLinkSent": "We sent a magic link to <strong>{email}</strong>. Click it to sign in.",
+    "alreadyAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "signInLink": "Sign in",
+    "signUpLink": "Create account",
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "authFailed": "Authentication failed. Please try again."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeBack": "Welcome back, {email}",
+    "newProject": "New project",
+    "projects": "Projects",
+    "noProjects": "No projects yet",
+    "noProjectsDesc": "Create your first project to get started.",
+    "createProject": "Create project"
+  },
+  "projects": {
+    "title": "Projects",
+    "newProject": "New project",
+    "projectName": "Project name",
+    "description": "Description (optional)",
+    "creating": "Creating...",
+    "createProject": "Create project",
+    "uploadFiles": "Upload files",
+    "files": "Files",
+    "noFiles": "No files uploaded yet",
+    "clickToUpload": "Click to upload",
+    "orDragDrop": "or drag and drop",
+    "supportedFormats": "Images, PDFs, videos, audio, and more",
+    "uploading": "Uploading files..."
+  },
+  "comments": {
+    "title": "Comments",
+    "addComment": "Add a comment...",
+    "send": "Send",
+    "noComments": "No comments yet",
+    "pinned": "pinned"
+  },
+  "approvals": {
+    "approve": "Approve",
+    "reject": "Reject",
+    "changes": "Changes",
+    "saving": "Saving...",
+    "status": "Status"
+  },
+  "activity": {
+    "title": "Activity",
+    "noActivity": "No activity yet"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "unread": "{count} unread",
+    "unreadPlural": "{count} unread notifications",
+    "markAllRead": "Mark all as read",
+    "noNotifications": "No notifications yet"
+  },
+  "language": {
+    "switchTo": "Switch language",
+    "en": "English",
+    "ru": "Русский"
+  }
+}
