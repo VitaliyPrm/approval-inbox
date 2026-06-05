@@ -1,0 +1,12 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
+  "outputDirectory": ".next",
+  "rewrites": [
+    {
+      "source": "/app/:path*",
+      "destination": "https://app.approvalinbox.app/:path*"
+    }
+  ]
+}
