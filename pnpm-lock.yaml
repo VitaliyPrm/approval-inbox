@@ -60,6 +60,9 @@ importers:
 
   apps/app:
     dependencies:
+      '@approval-inbox/database':
+        specifier: workspace:*
+        version: link:../../packages/database
       '@base-ui/react':
         specifier: ^1.5.0
         version: 1.5.0(@types/react@19.2.16)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
