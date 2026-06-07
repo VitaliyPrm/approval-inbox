@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "buildCommand": "pnpm --filter @approval-inbox/app build",
+  "outputDirectory": "apps/app/.next"
+}
