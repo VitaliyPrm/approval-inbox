@@ -1,7 +1,6 @@
 {
   "framework": "nextjs",
-  "rootDirectory": "apps/app",
   "installCommand": "pnpm install --no-frozen-lockfile",
   "buildCommand": "pnpm --filter @approval-inbox/app build",
-  "outputDirectory": ".next"
+  "outputDirectory": "apps/app/.next"
 }
