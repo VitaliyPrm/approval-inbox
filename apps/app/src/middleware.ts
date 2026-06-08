@@ -22,7 +22,16 @@ const publicRoutes = [
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Handle i18n redirect first
+  // Skip middleware for static files and API routes
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname === "/"
+  ) {
+    return NextResponse.next();
+  }
+
+  // Handle i18n redirect first (needed for localePrefix: "always")
   const i18nResponse = intlMiddleware(request);
   if (i18nResponse) {
     return i18nResponse;
@@ -30,22 +39,17 @@ export async function middleware(request: NextRequest) {
 
   const pathWithoutLocale = pathname.replace(/^\/(en|ru)(\/|$)/, "/");
 
+  // Skip auth check for client portal
+  if (pathWithoutLocale.startsWith("/c/")) {
+    return NextResponse.next();
+  }
+
   const isProtected = protectedRoutes.some((route) =>
     pathname.startsWith(route) || pathWithoutLocale.startsWith(route)
   );
   const isPublic = publicRoutes.some((route) =>
     pathname.startsWith(route) || pathWithoutLocale.startsWith(route)
   );
-
-  // Skip middleware for static files, API routes, and client portal
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/c/") ||
-    pathname === "/"
-  ) {
-    return NextResponse.next();
-  }
 
   let supabaseResponse = NextResponse.next({ request });
   const supabase = createServerClient(
