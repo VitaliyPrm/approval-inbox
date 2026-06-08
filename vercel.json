@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "installCommand": "pnpm config set onlyBuiltDependencies '[\"sharp\",\"unrs-resolver\"]' --location project && pnpm install --no-frozen-lockfile",
+  "installCommand": "pnpm install --no-frozen-lockfile",
   "buildCommand": "pnpm --filter @approval-inbox/app build",
   "outputDirectory": "apps/app/.next"
 }
